@@ -9,11 +9,11 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    bool isDarkMode = false; // 이 값을 동적으로 설정 가능 (예: MediaQuery 사용)
+
     return MaterialApp(
       title: 'ChilboPay',
-      theme: initThemeData(brightness: Brightness.light),
-      darkTheme: initThemeData(brightness: Brightness.dark),
-      themeMode: ThemeMode.system,
+      theme: appTheme(isDarkMode),
       home: LoginPage(),
     );
   }
